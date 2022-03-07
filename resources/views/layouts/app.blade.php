@@ -23,10 +23,10 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="container">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand h1" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -36,7 +36,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link text-success" href="https://senjaba.com/new-shop" target="_blank">Ouvrir une boutique en ligne</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -57,11 +59,11 @@
                         @else
 
                         <li>
-                            <a class="btn btn-primary" href="/maraichage" role="button">MARAICHAGE</a>
+                            <a class="mx-2 text-success nav-link" href="/maraichage" role="button">MARAICHAGE</a>
                         </li>
 
                         <li>
-                            <a class="btn btn-primary" href="/maraichage" role="button">ARBORICULTURE</a>
+                            <a class="text-success nav-link" href="/maraichage" role="button">ARBORICULTURE</a>
                         </li>
 
                         <li class="nav-item dropdown">

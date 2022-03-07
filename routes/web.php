@@ -53,8 +53,18 @@ Route::get('/maraichage', function () {
 
 
 Route::post('/maraichage', function () {
+    $tableauMois = [
+        'Mai' => [
+            'oignon' => ['route'=>'/oignon','nom' => 'Oignon', 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg71gN1poAcNqPh75LRNnVmdvdVUWBPYgKAWp3iWkBIFu0vNNsFwoith0MuU-e60B7PEA&usqp=CAU'],
+            'carotte' => ['route'=>'/carotte','nom' => 'Carotte', 'image' => 'https://www.espace-concours.fr/uploads/2021/03/carotte2-min-2.jpeg']
+        ],
+        'Juin' => [
+            'navet' => ['route'=>'/navet','nom' => 'Navet', 'image' => 'https://www.niokobok.com/1161-large_default/navet-blanc-1kg.jpg'],
+            'gombo' => ['route'=>'/gombo','nom' => 'Gombo', 'image' => 'https://www.gastronomiac.com/wp/wp-content/uploads/2018/11/gombos.jpg']
+        ]
+    ];
     /**return "vous avez choisi " . request('mois');*/
-    return view('maraichageliste');
+    return view('maraichageliste',compact('tableauMois'));
 });
 
 Route::get('/maraichageliste', function () {

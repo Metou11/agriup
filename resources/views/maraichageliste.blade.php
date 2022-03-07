@@ -1,7 +1,30 @@
 @extends('layouts.app')
 @section('content')
 
-
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text h3">
+                    Les spéculations favorables pour le mois de <strong>{{ request('mois') }}</strong> sont:
+                </p>
+            </div>
+        </div>
+    </div>
+    @foreach ($tableauMois[request('mois')] as $ligneTableau)
+        <div class="col-md-6">
+            <div class="card">
+                <img style="height: 500px; min-height: 500px; object-fit: contain" class="card-img-top" src="{{ $ligneTableau['image'] }}" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">{{ $ligneTableau['nom'] }}</h4>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ $ligneTableau[  'route'] }}" class="btn btn-success">Visualiser</a>
+                </div>
+            </div>
+        </div>
+    @endforeach
+</div>
 <form action="/maraichageliste" method="post" class="section">
 
     @if(request('mois')== 'Janvier' )
